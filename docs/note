@@ -1,0 +1,16 @@
+方法解析：
+MySQLdb只支持Python2.*，还不支持3.*
+可以用PyMySQL代替。安装方法：pip install PyMySQL
+
+然后在需要的项目中，把 __init__.py中添加两行：
+import pymysql
+pymysql.install_as_MySQLdb()
+就可以用 import MySQLdb了。其他的方法与MySQLdb一样。
+
+迁移的过程中，有问题删除migrations文件夹，重新迁移
+
+“exp”: 过期时间
+“nbf”: 表示当前时间在nbf里的时间之前，则Token不被接受
+“iss”: token签发者
+“aud”: 接收者
+“iat”: 发行时间
